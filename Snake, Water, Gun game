@@ -1,4 +1,4 @@
-#Snake Water Gun Game
+#Snake Water Gun
 import random
 
 c=0
@@ -7,6 +7,7 @@ h=0
 def game():
     global c
     global h
+    global n
     n = 10
     while n > 0:
         listt = ["Snake", "Water", "Gun"]
@@ -66,6 +67,7 @@ game()
 
 print(f"Computer won {c} times!")
 print(f"You won {h} times!")
+print(f"No. of no-wins are", 10-c-h)
 
 if c>h:
     print("You lost!")
@@ -73,3 +75,4 @@ elif c==h:
     print("Its a Tie!")
 else:
     print("You won!")
+
