@@ -1,0 +1,75 @@
+#Snake Water Gun Game
+import random
+
+c=0
+h=0
+
+def game():
+    global c
+    global h
+    n = 10
+    while n > 0:
+        listt = ["Snake", "Water", "Gun"]
+        comp_turn = random.choice(listt)
+        human = input("Enter s, w or g\n")
+
+        n-=1
+        if comp_turn == "Snake":
+            if human == "s":
+                # print(comp_turn)
+                print("Computer chose", comp_turn,"\nTie!")
+            elif human == "w":
+                # print(comp_turn)
+                print("Computer chose", comp_turn,"\nYou lost!")
+                c += 1
+            elif human == "g":
+                # print(comp_turn)
+                print("Computer chose", comp_turn,"\nYou won!")
+                h += 1
+            else:
+                # print(comp_turn)
+                print("Try again!")
+        elif comp_turn == "Water":
+            if human == "s":
+                # print(comp_turn)
+                print("Computer chose", comp_turn,"\nYou won!")
+                h += 1
+            elif human == "w":
+                # print(comp_turn)
+                print("Computer chose", comp_turn,"\nTie!")
+            elif human == "g":
+                # print(comp_turn)
+                print("Computer chose", comp_turn,"\nYou lost!")
+                c += 1
+            else:
+                # print(comp_turn)
+                print("Try again!")
+        elif comp_turn == "Gun":
+            if human == "s":
+                # print(comp_turn)
+                print("Computer chose", comp_turn,"\nYou lost!")
+                c += 1
+            elif human == "w":
+                # print(comp_turn)
+                print("Computer chose", comp_turn,"\nYou won!")
+                h += 1
+            elif human == "g":
+                # print(comp_turn)
+                print("Computer chose", comp_turn,"\nTie!")
+            else:
+                # print(comp_turn)
+                print("Try again!")
+
+
+game()
+
+
+print(f"Computer won {c} times!")
+print(f"You won {h} times!")
+
+if c>h:
+    print("You lost!")
+elif c==h:
+    print("Its a Tie!")
+else:
+    print("You won!")
